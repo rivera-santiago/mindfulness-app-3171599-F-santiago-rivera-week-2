@@ -1,0 +1,13 @@
+# Ignore nested node_modules and pnpm artifacts in the week-3 project to avoid long path issues
+week-3/**/node_modules/
+week-3/**/.pnpm/
+week-3/**/.pnpm-store/
+
+# Ignore common build artifacts inside week-3
+week-3/**/dist/
+week-3/**/build/
+
+# Optional: lockfiles from package managers inside subprojects
+week-3/**/pnpm-lock.yaml
+week-3/**/package-lock.json
+week-3/**/yarn.lock

@@ -1,73 +1,109 @@
-# React + TypeScript + Vite
+# 🧘 Catálogo Interactivo de Meditación y Mindfulness
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📌 Proyecto Semana 04 – React + TypeScript
 
-Currently, two official plugins are available:
+Este proyecto consiste en una **aplicación web de un catálogo interactivo** orientado al área de **Salud y Bienestar**, específicamente a una **app de meditación y mindfulness**.  
+El objetivo es permitir al usuario **visualizar, buscar, filtrar y ordenar** distintas sesiones de meditación de forma dinámica.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+El desarrollo se realizó utilizando **React 18**, **TypeScript** y **Vite**, aplicando buenas prácticas de programación y los conceptos vistos durante la semana.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🎯 Objetivo del Proyecto
 
-## Expanding the ESLint configuration
+Crear un catálogo interactivo que implemente:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Renderizado condicional
+- Listas con keys únicas
+- Filtrado de datos
+- Ordenamiento sin mutar el arreglo original
+- Búsqueda en tiempo real
+- Tipado fuerte con TypeScript
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 🧠 Dominio del Proyecto
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+**Salud y Bienestar – App de Meditación y Mindfulness**
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 🧘 Entidad Principal: Meditación
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Cada meditación cuenta con las siguientes propiedades:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- **id**: Identificador único
+- **title**: Nombre de la meditación
+- **category**: Tipo de meditación
+- **duration**: Duración en minutos
+- **level**: Nivel (Principiante, Intermedio, Avanzado)
+- **guided**: Si es guiada o no
+- **available**: Disponibilidad
+- **instructor**: Nombre del instructor
+
+---
+
+
+---
+
+## ⚙️ Tecnologías Utilizadas
+
+- React 18
+- TypeScript
+- Vite
+- PNPM
+- HTML5 y CSS básico
+
+---
+
+## ✅ Funcionalidades Implementadas
+
+### 🔹 Renderizado Condicional
+- Mensaje cuando no hay resultados
+- Contador dinámico de resultados
+- Etiquetas condicionales de disponibilidad
+
+### 🔹 Listas con Keys
+- Renderizado de listas con `.map()`
+- Uso de `id` único como `key`
+- Componentes reutilizables
+
+### 🔹 Filtrado
+- Filtro booleano para mostrar solo meditaciones disponibles
+- Botón de activación/desactivación del filtro
+
+### 🔹 Ordenamiento
+- Orden por título
+- Orden por duración
+- Orden por nivel
+- No se muta el arreglo original de datos
+
+### 🔹 Búsqueda
+- Búsqueda en tiempo real
+- Case-insensitive
+- Búsqueda por múltiples campos (título, categoría, instructor)
+
+---
+
+## 🧩 Tipado con TypeScript
+
+El proyecto utiliza **interfaces y tipos personalizados**, centralizados en el archivo:
+
+
+Esto garantiza:
+- Código más seguro
+- Mejor mantenimiento
+- Prevención de errores comunes
+
+---
+
+## 🚀 Instalación y Ejecución
+
+### 1️⃣ Clonar o copiar el proyecto
+```bash
+git clone <url-del-repositorio>
+
+
+pnpm install
+
+pnpm dev
+
+http://localhost:5173
